@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+!8kxy9a($_bm!aj!+y0b-q-s+$7nc!w0c2#0@c1714a_oww_w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['asociacionusar.herokuapp.com', '*']
 #ALLOWED_HOSTS = ['*']
@@ -110,7 +110,7 @@ DATABASES = {
 }
 """
 #-----------------------------------------
-
+"""
 #BASE DE DATOS SQLITE3
 DATABASES = {
     #Base de datos default(sqlite3)
@@ -119,9 +119,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-#------------------------------------------
 """
+#------------------------------------------
+
 import dj_database_url
 from decouple import config
 
@@ -130,7 +130,7 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
-"""
+
 
 """
 #load_dotenv(find_dotenv())
@@ -190,15 +190,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-# Archivos estáticos (CSS, JavaScript, Imágenes)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
